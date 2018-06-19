@@ -1,0 +1,1 @@
+web: gunicorn DronaOnline.wsgi --log-file -
