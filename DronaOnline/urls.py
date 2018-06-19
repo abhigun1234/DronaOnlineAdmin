@@ -19,6 +19,5 @@ from django.conf.urls import url
 from DronaOnline.views import drona_home
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    url(r'^dronaonline/$', drona_home, name='dronaonline')
+    url(r'^drona_home/$', drona_home, name='drona_home')
 ]
