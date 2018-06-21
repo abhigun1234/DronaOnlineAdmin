@@ -1,4 +1,7 @@
 from django.http import HttpResponse
-def drona_home(request):
-    return HttpResponse('hello world')
+from rest_framework.decorators import api_view
+from django.shortcuts import render
+@api_view(['GET', 'POST'])
+def dronahome(request):
+    return render(request,'index.html')
 

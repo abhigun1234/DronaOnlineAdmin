@@ -25,7 +25,7 @@ SECRET_KEY=config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['dronaonlineadmin.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['dronaonlineadmin.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'DronaOnline.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': ['mytemplate']
         ,
         'APP_DIRS': True,
         'OPTIONS': {

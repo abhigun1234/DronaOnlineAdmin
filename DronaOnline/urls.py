@@ -16,8 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from DronaOnline.views import drona_home
+from DronaOnline.views import dronahome
 
 urlpatterns = [
-    url(r'^drona_home/$', drona_home, name='drona_home')
+    url(r'^dronahome/$', dronahome, name='dronahome')
 ]
