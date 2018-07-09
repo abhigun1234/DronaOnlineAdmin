@@ -17,7 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from DronaOnline.views import dronahome
-
+from rest_framework.urlpatterns import   format_suffix_patterns
+from institute import views
 urlpatterns = [
-    url(r'^dronahome/$', dronahome, name='dronahome')
+  path('admin/', admin.site.urls),
+  url(r'^courses/', views.courseDetails.as_view()),
+  url(r'^dronahome/$', dronahome, name='dronahome')
 ]

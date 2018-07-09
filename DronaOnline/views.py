@@ -3,5 +3,5 @@ from rest_framework.decorators import api_view
 from django.shortcuts import render
 @api_view(['GET', 'POST'])
 def dronahome(request):
-    return render(request,'index.html')
+    return render(request,'home.html')
 

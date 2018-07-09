@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'institute'
 ]
 
 MIDDLEWARE = [
@@ -76,7 +78,15 @@ WSGI_APPLICATION = 'DronaOnline.wsgi.application'
 
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
-DATABASES = { 'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
+DATABASES = { 'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd8mdfd3sb2gg34',
+        'USER': 'dtwavkwtxjyxng',
+        'PASSWORD': '63c11f579bbfda37e7daff86679d38891cb9845b1655c20d2aec775eb700f643',
+        'HOST': 'ec2-50-16-241-91.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -115,5 +125,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS=['mystatic',]
+MEDIA_URL="/media/"
