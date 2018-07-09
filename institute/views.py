@@ -20,7 +20,8 @@ from .serializers import courseSerilizer
 class courseDetails(APIView):
     def get(self,request):
         courses=Course.objects.all()
+        print(courses)
         serilezer=courseSerilizer(courses,many=True)
-        return Response(serilezer.data)
+        return Response({'courseDetails': serilezer.data})
     def post(self):
         pass
