@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY=config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = True
 
 ALLOWED_HOSTS = ['dronaonlineadmin.herokuapp.com','127.0.0.1']
 
@@ -126,5 +126,7 @@ USE_TZ = True
 STATIC_ROOT = "app-root/repo/wsgi/static"
 STATIC_URL = '/static/'
 STATICFILES_DIRS=['mystatic',]
+
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+print(MEDIA_ROOT)
 MEDIA_URL="/media/"

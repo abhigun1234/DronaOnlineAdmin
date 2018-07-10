@@ -20,11 +20,11 @@ from DronaOnline.views import dronahome
 from rest_framework.urlpatterns import   format_suffix_patterns
 from institute import views
 from django.conf.urls.static import static
-from django.conf import settings
+from DronaOnline import settings
 urlpatterns = [
   path('admin/', admin.site.urls),
   url(r'^courses/', views.courseDetails.as_view()),
   url(r'^dronahome/$', dronahome, name='dronahome')
 ]
-urlpatterns+=static(settings.MEDIA_URL,documents_root=settings.MEDIA_ROOT)
-urlpatterns+=static(settings.STATIC_URL,documents_root=settings.MEDIA_ROOT)
+if settings.DEBUG is True:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
