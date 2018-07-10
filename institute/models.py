@@ -6,8 +6,9 @@ class Course(models.Model):
     fees=models.CharField(max_length=30)
     duration=models.CharField(max_length=30)
     description=models.CharField(max_length=30)
-    imageUrl=models.CharField(max_length=30)
+    imageUrl=models.ImageField(default='defoult.png',blank=True)
     videoUrl=models.CharField(max_length=30)
+
     def __str__(self):
         return self.name + '' +self.fees
 
