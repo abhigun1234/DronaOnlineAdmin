@@ -7,7 +7,7 @@ class Course(models.Model):
     duration=models.CharField(max_length=30)
     description=models.CharField(max_length=30)
     imageUrl=models.ImageField(default='defoult.png',blank=True)
-    videoUrl=models.CharField(max_length=30)
+    videoUrl=models.FileField()
 
     def __str__(self):
         return self.name + '' +self.fees
