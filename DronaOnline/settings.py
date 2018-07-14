@@ -126,6 +126,10 @@ USE_TZ = True
 STATIC_ROOT = "app-root/repo/wsgi/static"
 STATIC_URL = '/static/'
 STATICFILES_DIRS=['mystatic',]
-MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+
+'''MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 print(MEDIA_ROOT)
-MEDIA_URL="/media/"
+MEDIA_URL="/media/"'''
+ENV_PATH = os.path.abspath(os.path.dirname(__file__))
+MEDIA_ROOT = os.path.join(ENV_PATH, 'videos/')
+MEDIA_URL = 'http://nirali23.0fees.us/'
