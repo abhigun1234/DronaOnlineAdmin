@@ -7,13 +7,14 @@ class Course(models.Model):
     duration=models.CharField(max_length=30)
     description=models.CharField(max_length=30)
     imageUrl=models.ImageField(default='defoult.png',blank=True)
+    videoUrl=models.FileField()
 
     def __str__(self):
         return self.name + '' +self.fees
 
 class Faculty(models.Model):
     Id=models.CharField(max_length=30,primary_key=True)
-    name=models.CharField(max_length=30)
+    name=models.CharField(max_length=3)
     salary=models.CharField(max_length=30)
     address=models.CharField(max_length=30)
     description=models.CharField(max_length=30)
