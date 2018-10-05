@@ -24,6 +24,7 @@ from DronaOnline import settings
 urlpatterns = [
   path('admin/', admin.site.urls),
   url(r'^courses/', views.courseDetails.as_view()),
+url(r'^registeruser/', views.RegisterUser.as_view()),
   url(r'^dronahome/$', dronahome, name='dronahome')
 ]
 if settings.DEBUG is True:

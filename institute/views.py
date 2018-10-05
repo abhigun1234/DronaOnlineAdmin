@@ -10,7 +10,8 @@ from rest_framework.response import Response
 from  rest_framework  import status  #return status
 from .models import Course
 #serilizer used for converting the the data into json
-from .serializers import courseSerilizer
+from .serializers import courseSerilizer,userSerializer
+from .models import  User
 
 
 
@@ -23,5 +24,44 @@ class courseDetails(APIView):
         print(courses)
         serilezer=courseSerilizer(courses,many=True)
         return Response({'courseDetails': serilezer.data})
-    def post(self):
-        pass
+    def post(self,request):
+        print(request.data)
+        return Response("done")
+
+
+
+'''
+class User defines the drona online user register and login  functionlity
+
+'''
+class RegisterUser(APIView):
+    def get(self,request):
+
+        users = User.objects.all()
+        print(users)
+        serilezer = userSerializer(users, many=True)
+        return Response({'userdetails': serilezer.data})
+
+    def post(self,request):
+
+        print(request.data)
+        userData=request.data
+        response=''
+    #name
+        try:
+            name=userData['name']
+            print(name)
+            phone_no=userData['phone_no']
+            city=userData['city']
+            country=userData['country']
+            email=userData['email']
+            birth_date=userData['birth_date']
+            user=User(name=name,phone_no=phone_no,city=city,email=email,birth_date=birth_date)
+            user.save()
+            response='registerd'
+        except:
+            print('error')
+            response='error'
+        return Response(response)
+
+
