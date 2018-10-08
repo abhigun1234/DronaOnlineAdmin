@@ -1,6 +1,6 @@
 from rest_framework  import serializers
 from institute.models import Course
-from institute.models import  user
+from institute.models import  User
 class courseSerilizer(serializers.ModelSerializer):
 
      class Meta:
@@ -10,11 +10,11 @@ class courseSerilizer(serializers.ModelSerializer):
 
 class userSerializer(serializers.ModelSerializer):
     class Meta:
-        model = user
+        model = User
         fields = ('__all__')
 
 
 class userLoginSerializer(serializers.ModelSerializer):
     class Meta:
-        model=user
+        model=User
         fields=('__all__')

@@ -11,7 +11,7 @@ from  rest_framework  import status  #return status
 from .models import Course
 #serilizer used for converting the the data into json
 from .serializers import courseSerilizer,userSerializer
-from .models import  user
+from .models import  User
 
 
 
