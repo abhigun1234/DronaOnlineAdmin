@@ -33,4 +33,16 @@ class User(models.Model):
     birth_date = models.DateField(max_length=30)
 
 
+class Dronauser(models.Model):
+    Id=models.AutoField(primary_key=True)
+    name = models.CharField(max_length=30)
+    phone_no=models.CharField(max_length=30)
+    city= models.CharField(max_length=30)
+    country = models.CharField(max_length=30)
+    email = models.CharField(max_length=30)
+    birth_date = models.DateField(max_length=30)
+    password=models.CharField(max_length=30)
+    token=models.CharField(max_length=30)
+
+
 
