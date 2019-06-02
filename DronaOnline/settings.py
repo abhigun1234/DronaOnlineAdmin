@@ -78,16 +78,16 @@ WSGI_APPLICATION = 'DronaOnline.wsgi.application'
 
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
+# DATABASES = { 'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'd8mdfd3sb2gg34',
+#         'USER': 'dtwavkwtxjyxng',
+#         'PASSWORD': '63c11f579bbfda37e7daff86679d38891cb9845b1655c20d2aec775eb700f643',
+#         'HOST': 'ec2-50-16-241-91.compute-1.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 DATABASES = { 'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd8mdfd3sb2gg34',
-        'USER': 'dtwavkwtxjyxng',
-        'PASSWORD': '63c11f579bbfda37e7daff86679d38891cb9845b1655c20d2aec775eb700f643',
-        'HOST': 'ec2-50-16-241-91.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
-'''DATABASES = { 'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dronaonline',
         'USER': 'postgres',
@@ -95,7 +95,7 @@ DATABASES = { 'default': {
         'HOST': 'localhost',
         'PORT': '5432',
     }
-}'''
+}
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
@@ -133,11 +133,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 STATIC_ROOT = "app-root/repo/wsgi/static"
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK={
+    'DEFAULT_PERMISSION_CLASSESS':('rest_framework.permission.IsAuthenticated'),
+        'DEFFULT_AUTHENTICATION_CLASSES':('rest_framework_simplejwt.authentication.JwtAuthentication',)
+
+}
 STATICFILES_DIRS=['mystatic',]
 
-'''MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 print(MEDIA_ROOT)
-MEDIA_URL="/media/"'''
-ENV_PATH = os.path.abspath(os.path.dirname(__file__))
+MEDIA_URL="/media/"
+'''ENV_PATH = os.path.abspath(os.path.dirname(__file__))
 MEDIA_ROOT = os.path.join(ENV_PATH, 'videos/')
-MEDIA_URL = 'http://nirali23.0fees.us/'
+MEDIA_URL = 'http://nirali23.0fees.us/'''''
+

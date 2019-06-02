@@ -44,5 +44,10 @@ class Dronauser(models.Model):
     password=models.CharField(max_length=30)
     token=models.CharField(max_length=30)
 
+    def getPassword(self):
+
+        return self.password
+
+
 
 

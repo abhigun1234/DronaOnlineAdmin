@@ -8,6 +8,7 @@ from rest_framework.views import APIView
 # returns response like 200 ok 404
 from rest_framework.response import Response
 from  rest_framework  import status  #return status
+from rest_framework.status import HTTP_200_OK,HTTP_400_BAD_REQUEST
 from .models import Course
 #serilizer used for converting the the data into json
 from .serializers import courseSerilizer,userSerializer
@@ -19,6 +20,7 @@ from .models import  User
 
 
 class courseDetails(APIView):
+
     def get(self,request):
         courses=Course.objects.all()
         print(courses)
@@ -26,7 +28,20 @@ class courseDetails(APIView):
         return Response({'courseDetails': serilezer.data})
     def post(self,request):
         print(request.data)
-        return Response("done")
+        try:
+            courseData=request.data
+            name=courseData['name']
+            fees=courseData['fees']
+            duration=courseData['duration']
+            description = courseData['description']
+            imageUrl=courseData['imageUrl']
+            videoUrl = courseData['videoUrl']
+            course=Course(name=name,fees=fees,duration=duration,description=description,videoUrl=videoUrl)
+            course.save()
+            return Response("course added")
+
+        except:
+            return "error"
 
 
 
@@ -47,21 +62,31 @@ class RegisterUser(APIView):
         print(request.data)
         userData=request.data
         response=''
-    #name
-        try:
-            name=userData['name']
-            print(name)
-            phone_no=userData['phone_no']
-            city=userData['city']
-            country=userData['country']
-            email=userData['email']
-            birth_date=userData['birth_date']
-            user=User(name=name,phone_no=phone_no,city=city,email=email,birth_date=birth_date)
-            user.save()
-            response='registerd'
-        except:
-            print('error')
-            response='error'
-        return Response(response)
 
+        try:
+                name=userData['name']
+                print(name)
+                phone_no=userData['phone_no']
+                city=userData['city']
+                country=userData['country']
+                email=userData['email']
+                birth_date=userData['birth_date']
+                user=User(name=name,phone_no=phone_no,city=city,email=email,birth_date=birth_date)
+                user.save()
+                response='registerd'
+                return Response(response)
+        except:
+                response = 'error'
+                return Response(response)
+
+
+class UserLoginApiView(APIView):
+    permission_classes = []
+
+    def post(self, request):
+        print(request.data)
+        userData = request.data
+        serilezer = userSerializer(userData, many=True)
+        if serilezer.is_valid(raise_exception=True):
+            pass
 
