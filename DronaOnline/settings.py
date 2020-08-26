@@ -78,15 +78,15 @@ WSGI_APPLICATION = 'DronaOnline.wsgi.application'
 
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
-# DATABASES = { 'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'd8mdfd3sb2gg34',
-#         'USER': 'dtwavkwtxjyxng',
-#         'PASSWORD': '63c11f579bbfda37e7daff86679d38891cb9845b1655c20d2aec775eb700f643',
-#         'HOST': 'ec2-50-16-241-91.compute-1.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = { 'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd8mdfd3sb2gg34',
+        'USER': 'dtwavkwtxjyxng',
+        'PASSWORD': '63c11f579bbfda37e7daff86679d38891cb9845b1655c20d2aec775eb700f643',
+        'HOST': 'ec2-50-16-241-91.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 # DATABASES = { 'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 #         'NAME': 'dronaonline',
