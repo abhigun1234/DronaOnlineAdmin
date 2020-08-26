@@ -64,16 +64,16 @@ class RegisterUser(APIView):
         response=''
 
         try:
-                name=userData['name']
-                print(name)
-                phone_no=userData['phone_no']
-                city=userData['city']
-                country=userData['country']
-                email=userData['email']
-                birth_date=userData['birth_date']
-                # Python code to illustratdde Sending mail from
-                # your Gmail account
-                print(request.json)
+                # name=userData['name']
+                # print(name)
+                # phone_no=userData['phone_no']
+                # city=userData['city']
+                # country=userData['country']
+                # email=userData['email']
+                # birth_date=userData['birth_date']
+                # # Python code to illustratdde Sending mail from
+                # # your Gmail account
+                # print(request.json)
                 import smtplib
 
                 # creates SMTP session
@@ -93,8 +93,8 @@ class RegisterUser(APIView):
 
                 # terminating the session
                 s.quit()
-                user=User(name=name,phone_no=phone_no,city=city,email=email,birth_date=birth_date)
-                user.save()
+                #user=User(name=name,phone_no=phone_no,city=city,email=email,birth_date=birth_date)
+                #user.save()
                 response='registerd'
                 return Response(response)
         except:
