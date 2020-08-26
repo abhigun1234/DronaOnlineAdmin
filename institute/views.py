@@ -89,7 +89,7 @@ class RegisterUser(APIView):
                 message = "Message_you_need_to_send"
 
                 # sending the mail
-                s.sendmail("nitesh.aryan007@gmail.com", "nitesh.aryan007@gmail.com", message)
+                s.sendmail("justolearnpune@gmail.com", "justolearnpune@gmail.com", message)
 
                 # terminating the session
                 s.quit()
