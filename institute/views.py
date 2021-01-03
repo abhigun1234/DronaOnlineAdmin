@@ -86,7 +86,7 @@ class RegisterUser(APIView):
                 s.login("justolearnpune@gmail.com", "justo.007")
 
                 # message to be sent
-                message = "Message_you_need_to_send"
+                message = "new enquiry"
 
                 # sending the mail
                 s.sendmail("justolearnpune@gmail.com", "justolearnpune@gmail.com", message)
