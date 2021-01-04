@@ -97,9 +97,9 @@ class RegisterUser(APIView):
                 #user.save()
                 response='registerd'
                 return Response(response)
-        except:
+        except Exception as ex:
                 response = 'error'
-                return Response(response)
+                return Response(ex)
 
 
 class UserLoginApiView(APIView):
