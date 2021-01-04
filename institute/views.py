@@ -77,7 +77,7 @@ class RegisterUser(APIView):
                 import smtplib
 
                 # creates SMTP session
-                s = smtplib.SMTP('smtp.gmail.com', 587)
+                s = smtplib.SMTP_SSL('smtp.gmail.com', 465)
                 s.ehlo()
                 # start TLS for security
                 s.starttls()
