@@ -68,7 +68,7 @@ class RegisterUser(APIView):
         country=userData['country']
         email=userData['email']
         birth_date=userData['birth_date']
-        user=User(name=name,phone_no=phone_no,city=city,country="country",email=email,birth_date=birth_date)
+        user=User(name=name,phone_no=phone_no,city=city,country=country,email=email,birth_date=birth_date)
         user.save()
         response='registerd'
         return Response(response)
